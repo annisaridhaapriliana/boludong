@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikan Bolu Kambu - Oleh-Oleh Bu Desi</title>
+    <title>Milkfish Filling (Bolu Kambu) - Bu Desi Souvenir Shop</title>
     <style>
-        /* Reset & Font Dasar */
+        /* Reset & Base Fonts */
         * {
             margin: 0;
             padding: 0;
@@ -49,7 +49,7 @@
             gap: 15px;
         }
 
-        /* 4 Tombol Navigasi */
+        /* Navigation Buttons */
         .btn-nav {
             text-decoration: none;
             color: #ffffff;
@@ -117,37 +117,34 @@
             margin-bottom: 15px;
         }
 
-        /* Section Menu Akses Cepat (4 Button Cards) */
-        .menu-grid {
+        /* Product Image Gallery Grid */
+        .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
-        .menu-card {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
+        .gallery-item {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            border-top: 4px solid #005f73;
-            transition: transform 0.3s ease;
         }
 
-        .menu-card:hover {
-            transform: translateY(-5px);
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
         }
 
-        .menu-card h4 {
-            margin-bottom: 10px;
-            color: #005f73;
-        }
-
-        .menu-card p {
+        .gallery-item p {
+            padding: 10px;
             font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 15px;
+            color: #555;
+            font-weight: 500;
         }
 
         /* Footer */
@@ -178,72 +175,62 @@
 </head>
 <body>
 
-    <!-- Header & Navigasi Utama (4 Tombol) -->
+    <!-- Navigation Header -->
     <header>
         <nav>
-            <div class="logo">Oleh-Oleh Bu Desi</div>
+            <div class="logo">Bu Desi Souvenir Shop</div>
             <ul class="nav-links">
                 <li><a href="#home" class="btn-nav active">Home</a></li>
-                <li><a href="#sistem-informasi" class="btn-nav">Sistem Informasi</a></li>
-                <li><a href="#sistem-administrasi" class="btn-nav">Sistem Administrasi</a></li>
-                <li><a href="#promosi" class="btn-nav">Promosi</a></li>
+                <li><a href="#information" class="btn-nav">Information</a></li>
+                <li><a href="#admin" class="btn-nav">Admin</a></li>
+                <li><a href="#promotion" class="btn-nav">Promotion</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Content Utama -->
+    <!-- Main Content -->
     <div class="container" id="home">
         
-        <!-- Section Introduction -->
+        <!-- Introduction Section -->
         <div class="intro-card">
-            <span class="badge">Project Brief LeX - Kuliner Khas Pangkep</span>
-            <h1>Ikan Bolu Kambu</h1>
-            <h3>Warisan Kuliner Tradisional Tradisi Pangkajene</h3>
+            <span class="badge">LeX Project Brief - Sustainable Innovation Solution</span>
+            <h1>Milkfish Filling (Bolu Kambu)</h1>
+            <h3>Traditional Heritage Culinary of Pangkajene</h3>
             
             <p>
-                <strong>Ikan Bolu Kambu</strong> (atau dikenal juga sebagai Juku Kambu) merupakan salah satu hidangan khas tradisional dari daerah Pangkajene dan Kepulauan (Pangkep), Sulawesi Selatan. Makanan ini diolah dari bahan dasar ikan bandeng segar yang dipisahkan dari tulangnya, dicampur dengan rempah-rempah pilihan, kemudian dimasukkan kembali ke dalam kulit ikan sebelum dimasak.
+                <strong>Bolu Kambu</strong> (also known as Juku Kambu) is a traditional dish originating from the Pangkajene and Kepulauan (Pangkep) Regency in South Sulawesi. This unique dish is made by filleting milkfish to separate the meat from the bones and skin. The meat is cooked with traditional spices—such as turmeric, pepper, garlic, and shallots—and then stuffed back inside the fish skin before being fried or frozen.
             </p>
             <p>
-                Usaha <strong>Oleh-Oleh Bu Desi</strong> yang berlokasi di Kelurahan Mappasaile, Kabupaten Pangkep, didirikan sejak tahun 2016 untuk melestarikan kuliner khas ini agar tetap dapat dinikmati oleh masyarakat luas maupun wisatawan sebagai oleh-oleh khas daerah.
+                Established in 2016, <strong>Mrs. Desi's Souvenir Shop</strong> in Mappasaile Village is dedicated to preserving this traditional culinary heritage and making it accessible to local residents and visitors as a signature regional souvenir.
             </p>
             <p>
-                Platform ini dikembangkan sebagai bagian dari prototipe dan solusi inovasi digital (Project Brief LeX) guna membantu efisiensi operasional, pengelolaan administrasi, serta memperluas jangkauan pemasaran produk Ikan Bolu Kambu Usaha Ibu Desi secara lebih efektif.
+                This platform is developed as a prototype and digital innovation solution under the Learning Express (LeX) project to improve business productivity, streamline administrative workflows, and expand the market reach of Mrs. Desi's Bolu Kambu products[cite: 1].
             </p>
-        </div>
 
-        <!-- Section Pintasan Akses Fitur Utama -->
-        <h2 style="color: #005f73; margin-bottom: 20px;">Fitur & Sistem Utama</h2>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <h4>Home</h4>
-                <p>Halaman utama berisikan pengenalan produk dan profil UMKM Bu Desi.</p>
-                <a href="#home" class="btn-nav" style="font-size: 0.85rem;">Buka Home</a>
-            </div>
-            
-            <div class="menu-card">
-                <h4>Sistem Informasi</h4>
-                <p>Informasi detail terkait produk, stok, bahan baku, dan riwayat produksi.</p>
-                <a href="#sistem-informasi" class="btn-nav" style="font-size: 0.85rem;">Akses Informasi</a>
-            </div>
-
-            <div class="menu-card">
-                <h4>Sistem Administrasi</h4>
-                <p>Pengelolaan data pesanan, pencatatan keuangan, dan efisiensi operasional.</p>
-                <a href="#sistem-administrasi" class="btn-nav" style="font-size: 0.85rem;">Akses Administrasi</a>
+            <!-- Product Documentation Image Section -->
+            <h4 style="color: #005f73; margin-top: 30px; margin-bottom: 10px;">Product & Production Documentation</h4>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Preparation+Process" alt="Preparation of Bolu Kambu">
+                    <p>Cooking & Seasoning Process</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Packaging+Product" alt="Frozen Packaging">
+                    <p>Vacuum Sealed Frozen Packaging</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Served+Bolu+Kambu" alt="Served Bolu Kambu">
+                    <p>Traditional Served Dish</p>
+                </div>
             </div>
 
-            <div class="menu-card">
-                <h4>Promosi</h4>
-                <p>Katalog produk, media pemasaran digital, dan sarana pemesanan pelanggan.</p>
-                <a href="#promosi" class="btn-nav" style="font-size: 0.85rem;">Lihat Promosi</a>
-            </div>
         </div>
 
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Innovation LeX Project - Kelurahan Mappasaile, Pangkep. All Rights Reserved.</p>
+        <p>&copy; 2026 Innovation LeX Project - Mappasaile Village, Pangkep. All Rights Reserved.</p>
     </footer>
 
 </body>
