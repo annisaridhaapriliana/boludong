@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information & Heritage - Bu Desi Souvenir Shop</title>
+    <style>
+        /* Reset & Base Fonts */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #005f73;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        /* Navigation Buttons */
+        .btn-nav {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #0a9396;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-nav:hover {
+            background-color: #ee9b00;
+            color: #001219;
+            transform: translateY(-2px);
+        }
+
+        .btn-nav.active {
+            background-color: #ca6702;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Content Card Styles */
+        .info-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #005f73;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0a9396;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            color: #4a5568;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Feature Cards Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .feature-box {
+            background-color: #e9d8a6;
+            padding: 20px;
+            border-radius: 8px;
+            color: #001219;
+        }
+
+        .feature-box h4 {
+            color: #005f73;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Interactive Accordion */
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background-color: #f8f9fa;
+            color: #005f73;
+            padding: 15px 20px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #e8ecef;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .faq-answer p {
+            margin: 15px 0;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: linear-gradient(135deg, #005f73, #0a9396);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn-wa {
+            display: inline-block;
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb854;
+            transform: scale(1.05);
+        }
+
+        /* References Section */
+        .references-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .references-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .references-list li::before {
+            content: "📌";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .references-list a {
+            color: #0a9396;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #001219;
+            color: #fff;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .info-card, .contact-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">Bu Desi Souvenir Shop</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn-nav">Home</a></li>
+                <li><a href="info.html" class="btn-nav active">Info</a></li>
+                <li><a href="catalog.html" class="btn-nav">Catalog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- About & Heritage Section -->
+        <div class="info-card">
+            <h2 class="section-title">About Us & Culinary Heritage</h2>
+            <p>
+                <strong>Bolu Kambu</strong> (also widely known as <em>Juku Kambu</em>) represents one of the most cherished authentic culinary delicacies from the Bugis-Makassar culture, specifically rooted in Pangkajene and Kepulauan (Pangkep) Regency, South Sulawesi. 
+            </p>
+            <p>
+                Operating since 2016 in Mappasaile Village, <strong>Bu Desi Souvenir Shop</strong> is dedicated to keeping this ancestral recipe alive. We meticulously process fresh local milkfish by deboning, seasoning the meat with local secret spices, and re-stuffing it back into the intact fish skin before vacuum-sealing or frying.
+            </p>
+        </div>
+
+        <!-- Product Details Section -->
+        <div class="info-card">
+            <h2 class="section-title">Product Specifications & Storage</h2>
+            <div class="grid-2">
+                <div class="feature-box">
+                    <h4>🌱 Ingredients & Seasoning</h4>
+                    <p>Made of fresh Pangkep milkfish meat, aromatic turmeric, ground pepper, garlic, shallots, toasted coconut blend, and natural seasonings without artificial preservatives.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>❄️ Shelf Life & Preservation</h4>
+                    <p>
+                        • <strong>Room Temperature:</strong> Up to 2 days.<br>
+                        • <strong>Chilled (Refrigerator):</strong> Up to 7 days.<br>
+                        • <strong>Frozen (Freezer -18°C):</strong> Up to 1-2 months in sealed vacuum packaging.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Interactive Section -->
+        <div class="info-card">
+            <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do I prepare frozen Bolu Kambu before eating?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Thaw the frozen package at room temperature for 15-20 minutes. Shallow fry or deep fry in medium heat oil until golden brown, then drain and serve warm.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is Bolu Kambu safe for long-distance shipping?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! Our vacuum-sealed frozen packaging is specially designed to maintain freshness during overnight delivery or express shipping to surrounding regions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Does the fish contain sharp bones?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. The filleting and deboning process removes all fine internal bones, making it safe and easy to enjoy for both children and adults.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Direct Contact Section -->
+        <div class="contact-box">
+            <h3>Get in Touch with Us</h3>
+            <p>Have questions, custom catering requests, or bulk orders? Contact Bu Desi directly via WhatsApp.</p>
+            <a href="https://wa.me/6285213393658?text=Halo%20Bu%20Desi,%20saya%20ingin%20bertanya%20mengenai%20produk%20Bolu%20Kambu." target="_blank" class="btn-wa">
+                💬 Chat via WhatsApp (085213393658)
+            </a>
+        </div>
+
+        <!-- Valid References Section -->
+        <div class="info-card">
+            <h2 class="section-title">References & Verified News Sources</h2>
+            <p>Read more about the cultural significance and development of Bolu Kambu (Juku Kambu) from verified publications:</p>
+            <ul class="references-list">
+                <li>
+                    <a href="https://www.liputan6.com/ramadan/read/2256028/yuk-racik-sendiri-ikan-bolu-kambuh-makanan-khas-makassar" target="_blank" rel="noopener noreferrer">
+                        Liputan6: Yuk Racik Sendiri Ikan Bolu Kambuh Makanan Khas Makassar
+                    </a>
+                </li>
+                <li>
+                    <a href="https://lintasterkini.com/14/06/2018/juku-kambu-sajian-khas-lebaran-di-tanah-bugis.html" target="_blank" rel="noopener noreferrer">
+                        Lintas Terkini: Juku Kambu Sajian Khas Lebaran di Tanah Bugis
+                    </a>
+                </li>
+                <li>
+                    <a href="https://makassar.antaranews.com/berita/497019/pemkab-pangkep-gelar-festival-ikan-bolu" target="_blank" rel="noopener noreferrer">
+                        ANTARA News: Pemerintah Kabupaten Pangkep Gelar Festival Ikan Bolu
+                    </a>
+                </li>
+                <li>
+                    <a href="https://indoposco.id/2024/07/18/ingin-santap-olahan-ikan-bandeng-coba-resep-bolu-kambu-asal-makassar/" target="_blank" rel="noopener noreferrer">
+                        Indoposco: Olahan Ikan Bandeng & Inovasi Kuliner Bolu Kambu
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Innovation LeX Project - Mappasaile Village, Pangkep. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Interactive JavaScript for FAQ Accordion -->
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('span');
+
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    answer.style.paddingTop = '0';
+                    answer.style.paddingBottom = '0';
+                    icon.textContent = '+';
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(el => {
+                        el.style.maxHeight = null;
+                        el.style.paddingTop = '0';
+                        el.style.paddingBottom = '0';
+                    });
+                    document.querySelectorAll('.faq-question span').forEach(el => el.textContent = '+');
+
+                    answer.style.maxHeight = answer.scrollHeight + 30 + 'px';
+                    answer.style.paddingTop = '15px';
+                    answer.style.paddingBottom = '15px';
+                    icon.textContent = '-';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
